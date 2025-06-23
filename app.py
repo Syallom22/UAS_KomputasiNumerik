@@ -6,7 +6,7 @@ from sympy import sympify, lambdify, Symbol
 # Konfigurasi halaman
 st.set_page_config(page_title="Bisection Method App", layout="wide")
 
-# CSS agar grafik tetap proporsional saat zoom
+# CSS agar grafik tetap proporsional saat zoom dan teks konsisten
 st.markdown("""
 <style>
 .element-container:has(canvas) {
@@ -14,8 +14,32 @@ st.markdown("""
     margin-left: auto;
     margin-right: auto;
 }
+.centered-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.instruction {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
 </style>
 """, unsafe_allow_html=True)
+
+# Judul dan petunjuk
+st.markdown("<div class='centered-title'>🔢 Aplikasi Metode Bisection</div>", unsafe_allow_html=True)
+st.markdown("""
+<div class='instruction'>
+Masukkan fungsi <code>f(x)</code> dalam format Python:<br>
+Gunakan <code>**</code> untuk pangkat, <code>*</code> untuk perkalian.<br>
+Contoh: <code>x**3 + 3*x - 5</code><br>
+<code>x**2 - 4</code>, <code>x**3 - x - 2</code>, <code>sin(x) - x/2</code>
+</div>
+""", unsafe_allow_html=True)
+st.markdown("---")
 
 # Fungsi metode bisection
 def bisection_visual(f, a, b, tol=1e-6, max_iter=100):
@@ -33,18 +57,6 @@ def bisection_visual(f, a, b, tol=1e-6, max_iter=100):
         else:
             a = c
     return c, max_iter, steps
-
-# Judul dan petunjuk
-st.markdown("<h1 style='text-align: center;'>🔢 Aplikasi Metode Bisection</h1>", unsafe_allow_html=True)
-st.markdown("""
-<div style='text-align: center; font-size: 16px;'>
-Masukkan fungsi <code>f(x)</code> dalam format Python:<br>
-Gunakan <code>**</code> untuk pangkat, <code>*</code> untuk perkalian.<br>
-Contoh: <code>x**3 + 3*x - 5</code><br>
-<code>x**2 - 4</code> , <code>x**3 - x - 2</code> , <code>sin(x) - x/2</code><br>
-</div>
-""", unsafe_allow_html=True)
-st.markdown("---")
 
 # Layout 2 kolom
 col1, col2 = st.columns([1, 2])
