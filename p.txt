@@ -1,0 +1,39 @@
+#streamlit run app.py
+
+import streamlit as st
+import numpy as np
+from sympy import sympify, lambdify, Symbol
+#pip3 install sympy
+import matplotlib.pyplot as plt
+#pip install matplotlib
+
+
+# UI Streamlit
+st.title("🧮 Aplikasi Komputasi Numerik - Metode Bisection")
+
+st.markdown("""
+Masukkan fungsi `f(x)` dalam format Python:
+
+- Gunakan `**` untuk pangkat, contoh: `x**3 + 3*x - 5`
+- Gunakan `*` untuk perkalian, contoh: `3*x` (bukan `3x`)
+- Fungsi yang didukung: `sin`, `cos`, `exp`, `log`, `sqrt`, dll.
+- `x**2 - 4`
+- `x**3 - x - 2`
+- `sin(x) - x/2`
+""")
+
+# Judul dan petunjuk
+st.markdown("<h1 style='text-align: center;'>🔢 Aplikasi Metode Bisection</h1>", unsafe_allow_html=True)
+st.markdown("""
+<div style='text-align: center; font-size: 16px;'>
+Masukkan fungsi <code>f(x)</code> dalam format Python:<br>
+Gunakan <code>**</code> untuk pangkat, <code>*</code> untuk perkalian.<br>
+Contoh: <code>x**3 + 3*x - 5</code><br>
+<code>x**2 - 4</code> , <code>x**3 - x - 2</code> , <code>sin(x) - x/2</code><br>
+</div>
+""", unsafe_allow_html=True)
+
+# buatkan app.py baru saja biar tinggal aku kopas
+# <code>x**2 - 4</code> , <code>x**3 - x - 2</code> , <code>sin(x) - x/2</code>
+# <code></code>
+# <code></code>

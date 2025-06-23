@@ -1,7 +1,11 @@
+#streamlit run app.py
+
 import streamlit as st
 import numpy as np
-import matplotlib.pyplot as plt
 from sympy import sympify, lambdify, Symbol
+#pip3 install sympy
+import matplotlib.pyplot as plt
+#pip install matplotlib
 
 # Konfigurasi halaman
 st.set_page_config(page_title="Bisection Method App", layout="wide")
