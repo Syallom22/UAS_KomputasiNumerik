@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 # Konfigurasi halaman
 st.set_page_config(page_title="Bisection Method App", layout="wide")
 
-# CSS agar grafik tetap proporsional saat zoom dan teks konsisten
+# CSS: grafik tetap proporsional & teks tidak membesar
 st.markdown("""
 <style>
 .element-container:has(canvas) {
@@ -18,34 +18,37 @@ st.markdown("""
     margin-left: auto;
     margin-right: auto;
 }
-.centered-title {
+.custom-title {
     text-align: center;
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 24px;
+    font-weight: 600;
     margin-top: 0;
     margin-bottom: 10px;
+    color: white;
 }
 .instruction {
     text-align: center;
     font-size: 16px;
-    margin-bottom: 10px;
+    line-height: 1.6;
+    color: white;
 }
 </style>
-""", unsafe_allow_html=True)
 
-# Judul dan petunjuk
-st.markdown("<div class='centered-title'>🔢 Aplikasi Metode Bisection</div>", unsafe_allow_html=True)
-st.markdown("""
-<div class='instruction'>
+<div class="custom-title">🔢 Aplikasi Metode Bisection</div>
+
+<div class="instruction">
 Masukkan fungsi <code>f(x)</code> dalam format Python:<br>
-Gunakan <code>**</code> untuk pangkat, <code>*</code> untuk perkalian.<br>
-Contoh: <code>x**3 + 3*x - 5</code><br>
-<code>x**2 - 4</code>, <code>x**3 - x - 2</code>, <code>sin(x) - x/2</code>
+Gunakan <code>**</code> untuk pangkat, <code>*</code> untuk perkalian.<br><br>
+Contoh:<br>
+<code>x**3 + 3*x - 5</code><br>
+<code>x**2 - 4</code><br>
+<code>x**3 - x - 2</code><br>
+<code>sin(x) - x/2</code>
 </div>
 """, unsafe_allow_html=True)
 st.markdown("---")
 
-# Fungsi metode bisection
+# Fungsi Bisection
 def bisection_visual(f, a, b, tol=1e-6, max_iter=100):
     steps = []
     if f(a) * f(b) >= 0:
@@ -110,7 +113,7 @@ with col2:
                 st.write(f"**Iterasi {step_num + 1}**:")
                 st.write(f"a = {a_i:.6f}, b = {b_i:.6f}, c = {c_i:.6f}, f(c) = {fc_i:.6f}")
 
-                # Plot
+                # Grafik
                 x_vals = np.linspace(a - 1, b + 1, 400)
                 y_vals = f(x_vals)
 
