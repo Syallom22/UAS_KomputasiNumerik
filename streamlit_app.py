@@ -30,6 +30,8 @@ st.markdown("""
 }
 </style>
 
+<div class="custom-title">🔢 Aplikasi Metode Bisection</div>
+
 <div style='text-align: center; font-size: 16px; margin-top: 20px;'>
     Masukkan fungsi <span style='font-family: monospace; color: #00FF99;'>f(x)</span> dalam format Python:<br><br>
     Gunakan <span style='font-family: monospace;'>*</span> untuk pangkat, <span style='font-family: monospace;'></span> untuk perkalian.<br><br>
