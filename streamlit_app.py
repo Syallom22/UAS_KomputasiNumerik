@@ -30,16 +30,10 @@ st.markdown("""
 }
 </style>
 
-<div class="custom-title">🔢 Aplikasi Metode Bisection</div>
-
-<div class="instruction">
-Masukkan fungsi <code>f(x)</code> dalam format Python:<br>
-Gunakan <code>**</code> untuk pangkat, <code>*</code> untuk perkalian.<br><br>
-Contoh:<br>
-<code>x**3 + 3*x - 5</code><br>
-<code>x**2 - 4</code><br>
-<code>x**3 - x - 2</code><br>
-<code>sin(x) - x/2</code>
+<div style='text-align: center; font-size: 16px; margin-top: 20px;'>
+    Masukkan fungsi <span style='font-family: monospace; color: #00FF99;'>f(x)</span> dalam format Python:<br><br>
+    Gunakan <span style='font-family: monospace;'>*</span> untuk pangkat, <span style='font-family: monospace;'></span> untuk perkalian.<br><br>
+    Contoh: <span style='font-family: monospace; color: #00FF99;'>x**3 + 3*x - 5</span>
 </div>
 """, unsafe_allow_html=True)
 st.markdown("---")
