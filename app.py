@@ -40,7 +40,8 @@ st.markdown("""
 <div style='text-align: center; font-size: 16px;'>
 Masukkan fungsi <code>f(x)</code> dalam format Python:<br>
 Gunakan <code>**</code> untuk pangkat, <code>*</code> untuk perkalian.<br>
-Contoh: <code>x**3 + 3*x - 5</code>
+Contoh: <code>x**3 + 3*x - 5</code><br>
+<code>x**2 - 4</code> , <code>x**3 - x - 2</code> , <code>sin(x) - x/2</code><br>
 </div>
 """, unsafe_allow_html=True)
 st.markdown("---")
